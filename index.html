@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cubrí Seguros</title>
+  
+  <!-- Basecoat UI CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
+  
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #4F46E5;
+      --font-sans: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans min-h-screen flex items-center justify-center p-4 antialiased">
+
+  <main class="w-full max-w-[390px] h-[844px] bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col relative">
+    
+    <!-- Header -->
+    <header class="flex items-center gap-2 p-6 pb-2">
+      <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">C</div>
+      <span class="font-bold text-lg text-indigo-600">Cubrí</span>
+    </header>
+
+    <!-- Stepper (se llena con JS) -->
+    <div id="stepper-container" class="px-6 py-2"></div>
+
+    <!-- Contenido scrolleable -->
+    <div class="flex-1 overflow-y-auto p-6 relative">
+      
+      <!-- PASO 0: CATÁLOGO -->
+      <section data-paso="0" class="step-section block">
+        <h1 class="text-3xl font-extrabold mb-3 leading-tight">Protegé lo que más usás en menos de 3 minutos</h1>
+        <p class="text-slate-500 mb-6 text-sm">Elegí qué querés asegurar. Cotizás al instante y contratás 100% online.</p>
+        
+        <div class="grid grid-cols-2 gap-3 mb-6">
+          <!-- Celular -->
+          <div class="border-2 border-indigo-600 bg-indigo-50/50 rounded-2xl p-4 cursor-pointer relative">
+            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <h3 class="font-bold text-sm">Celular</h3>
+            <p class="text-xs text-slate-500">Robo, rotura y pérdida</p>
+          </div>
+          <!-- Hogar -->
+          <div class="border border-slate-200 rounded-2xl p-4 opacity-60 cursor-not-allowed relative">
+            <span class="absolute top-2 right-2 text-[9px] font-bold bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">Próximamente</span>
+            <div class="w-10 h-10 bg-slate-100 text-slate-400 rounded-xl flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </div>
+            <h3 class="font-bold text-sm text-slate-500">Hogar</h3>
+            <p class="text-xs text-slate-400">Incendio y robo</p>
+          </div>
+          <!-- Bicicleta -->
+          <div class="border border-slate-200 rounded-2xl p-4 opacity-60 cursor-not-allowed relative">
+            <span class="absolute top-2 right-2 text-[9px] font-bold bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">Próximamente</span>
+            <div class="w-10 h-10 bg-slate-100 text-slate-400 rounded-xl flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"/></svg>
+            </div>
+            <h3 class="font-bold text-sm text-slate-500">Bicicleta</h3>
+            <p class="text-xs text-slate-400">Robo total</p>
+          </div>
+          <!-- Viaje -->
+          <div class="border border-slate-200 rounded-2xl p-4 opacity-60 cursor-not-allowed relative">
+            <span class="absolute top-2 right-2 text-[9px] font-bold bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">Próximamente</span>
+            <div class="w-10 h-10 bg-slate-100 text-slate-400 rounded-xl flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+            </div>
+            <h3 class="font-bold text-sm text-slate-500">Viaje</h3>
+            <p class="text-xs text-slate-400">Asistencia al viajero</p>
+          </div>
+        </div>
+        
+        <div class="border border-slate-200 rounded-xl p-3 flex items-center gap-3 bg-white">
+          <span class="bg-emerald-50 text-emerald-600 text-[10px] font-bold px-2 py-1 rounded">NUEVO</span>
+          <p class="text-xs text-slate-500">Primer mes con 20% OFF en todos los planes</p>
+        </div>
+      </section>
+
+      <!-- PASO 1: COTIZAR -->
+      <section data-paso="1" class="step-section hidden">
+        <div class="flex items-center gap-2 mb-6">
+          <button id="btn-atras-paso1" class="p-2 border border-slate-200 rounded-lg hover:bg-slate-50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h2 class="text-xl font-bold">Contanos sobre tu celular</h2>
+        </div>
+        <form id="form-paso1" class="space-y-4">
+          <div>
+            <label for="marca" class="block text-sm font-semibold mb-1">Marca</label>
+            <select id="marca" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600 bg-white">
+              <option value="">Seleccioná una marca...</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Apple">Apple</option>
+              <option value="Motorola">Motorola</option>
+              <option value="Xiaomi">Xiaomi</option>
+            </select>
+            <p class="text-red-500 text-xs mt-1 hidden" id="error-marca" role="alert">Elegí una marca</p>
+          </div>
+          <div>
+            <label for="modelo" class="block text-sm font-semibold mb-1">Modelo</label>
+            <input type="text" id="modelo" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="Ej: Galaxy A55">
+            <p class="text-red-500 text-xs mt-1 hidden" id="error-modelo" role="alert">Ingresá el modelo del equipo</p>
+          </div>
+          <div>
+            <label for="valor" class="block text-sm font-semibold mb-1">Valor del equipo</label>
+            <input type="number" id="valor" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="Ej: 600000" step="1" min="100000" max="2500000">
+            <p class="text-slate-500 text-xs mt-1">Entre $100.000 y $2.500.000</p>
+            <p class="text-red-500 text-xs mt-1 hidden" id="error-valor" role="alert">El valor debe estar entre $100.000 y $2.500.000</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2">Antigüedad</label>
+            <div class="flex gap-2">
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="antiguedad" value="menos1" class="peer sr-only" checked>
+                <div class="py-2 px-1 text-center border border-slate-300 rounded-full text-xs font-medium peer-checked:bg-indigo-50 peer-checked:border-indigo-600 peer-checked:text-indigo-600">Menos de 1 año</div>
+              </label>
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="antiguedad" value="1a2" class="peer sr-only">
+                <div class="py-2 px-1 text-center border border-slate-300 rounded-full text-xs font-medium peer-checked:bg-indigo-50 peer-checked:border-indigo-600 peer-checked:text-indigo-600">1 a 2 años</div>
+              </label>
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="antiguedad" value="mas2" class="peer sr-only">
+                <div class="py-2 px-1 text-center border border-slate-300 rounded-full text-xs font-medium peer-checked:bg-indigo-50 peer-checked:border-indigo-600 peer-checked:text-indigo-600">+2 años</div>
+              </label>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- PASO 2: PLANES -->
+      <section data-paso="2" class="step-section hidden">
+        <div class="flex items-center gap-2 mb-6">
+          <button id="btn-atras-paso2" class="p-2 border border-slate-200 rounded-lg hover:bg-slate-50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h2 class="text-xl font-bold">Elegí tu plan</h2>
+        </div>
+        <div id="contenedor-planes" class="space-y-3"></div>
+      </section>
+
+      <!-- PASO 3: DATOS PERSONALES -->
+      <section data-paso="3" class="step-section hidden">
+        <div class="flex items-center gap-2 mb-6">
+          <button id="btn-atras-paso3" class="p-2 border border-slate-200 rounded-lg hover:bg-slate-50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h2 class="text-xl font-bold">Tus datos</h2>
+        </div>
+        <form id="form-paso3" class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="nombre" class="block text-sm font-semibold mb-1">Nombre</label>
+              <input type="text" id="nombre" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600">
+              <p class="text-red-500 text-xs mt-1 hidden" id="error-nombre" role="alert">Ingresá tu nombre</p>
+            </div>
+            <div>
+              <label for="apellido" class="block text-sm font-semibold mb-1">Apellido</label>
+              <input type="text" id="apellido" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600">
+              <p class="text-red-500 text-xs mt-1 hidden" id="error-apellido" role="alert">Ingresá tu apellido</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="dni" class="block text-sm font-semibold mb-1">DNI</label>
+              <input type="text" id="dni" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600">
+              <p class="text-red-500 text-xs mt-1 hidden" id="error-dni" role="alert">DNI inválido</p>
+            </div>
+            <div>
+              <label for="nacimiento" class="block text-sm font-semibold mb-1">Nacimiento</label>
+              <input type="date" id="nacimiento" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600">
+              <p class="text-red-500 text-xs mt-1 hidden" id="error-nacimiento" role="alert">Debés ser mayor de edad</p>
+            </div>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+            <input type="email" id="email" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="juan@mail.com">
+            <p class="text-red-500 text-xs mt-1 hidden" id="error-email" role="alert">Ingresá un email válido</p>
+          </div>
+          <div>
+            <label for="celular" class="block text-sm font-semibold mb-1">Celular</label>
+            <input type="tel" id="celular" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="11 5555-1234">
+            <p class="text-red-500 text-xs mt-1 hidden" id="error-celular" role="alert">Celular inválido</p>
+          </div>
+          <div class="flex items-start gap-2 mt-4">
+            <input type="checkbox" id="terminos" class="mt-1">
+            <label for="terminos" class="text-xs text-slate-500 leading-tight">Acepto los términos y condiciones y la política de privacidad.</label>
+          </div>
+          <p class="text-red-500 text-xs mt-1 hidden" id="error-terminos" role="alert">Debés aceptar los términos</p>
+        </form>
+      </section>
+
+      <!-- PASO 4: PAGO -->
+      <section data-paso="4" class="step-section hidden">
+        <div class="flex items-center gap-2 mb-6">
+          <button id="btn-atras-paso4" class="p-2 border border-slate-200 rounded-lg hover:bg-slate-50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h2 class="text-xl font-bold">Pago</h2>
+        </div>
+        <div class="lg:hidden" id="resumen-mobile"></div>
+        <form id="form-paso4" class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2">Método de pago</label>
+            <div class="flex flex-col gap-2">
+              <label class="flex items-center gap-2 p-3 border border-slate-300 rounded-xl cursor-pointer">
+                <input type="radio" name="metodoPago" value="credito" checked> Tarjeta de crédito
+              </label>
+              <label class="flex items-center gap-2 p-3 border border-slate-300 rounded-xl cursor-pointer">
+                <input type="radio" name="metodoPago" value="debito"> Tarjeta de débito
+              </label>
+            </div>
+          </div>
+          <div>
+            <label for="tarjeta" class="block text-sm font-semibold mb-1">Número de tarjeta</label>
+            <input type="text" id="tarjeta" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="4111 1111 1111 1111" maxlength="19">
+            <p class="text-red-500 text-xs mt-1 hidden" id="error-tarjeta" role="alert">Número de tarjeta inválido</p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="vencimiento" class="block text-sm font-semibold mb-1">Vencimiento</label>
+              <input type="text" id="vencimiento" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="MM/AA" maxlength="5">
+              <p class="text-red-500 text-xs mt-1 hidden" id="error-vencimiento" role="alert">Vencimiento inválido</p>
+            </div>
+            <div>
+              <label for="cvv" class="block text-sm font-semibold mb-1">CVV</label>
+              <input type="text" id="cvv" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="123" maxlength="3">
+              <p class="text-red-500 text-xs mt-1 hidden" id="error-cvv" role="alert">CVV inválido</p>
+            </div>
+          </div>
+          <div>
+            <label for="titular-tarjeta" class="block text-sm font-semibold mb-1">Titular</label>
+            <input type="text" id="titular-tarjeta" class="w-full p-3 border border-slate-300 rounded-xl outline-none focus:border-indigo-600" placeholder="Nombre como figura en la tarjeta">
+            <p class="text-red-500 text-xs mt-1 hidden" id="error-titular-tarjeta" role="alert">Ingresá el nombre del titular</p>
+          </div>
+        </form>
+        <div class="bg-amber-50 text-amber-800 p-3 rounded-lg text-xs mt-4 border border-amber-200">
+          Simulación: Usá la tarjeta 4111... para el éxito, o 4000...0002 para el error.
+        </div>
+      </section>
+
+      <!-- PASO 5: ÉXITO -->
+      <section data-paso="5" class="step-section hidden text-center py-10">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✓</div>
+        <h2 class="text-2xl font-bold mb-2" id="exito-nombre">¡Listo!</h2>
+        <p class="text-slate-500 mb-4">Tu celular ya está protegido.</p>
+        <p class="text-sm text-slate-500 mb-4">Te enviamos la póliza a <strong id="exito-email"></strong></p>
+        <div class="bg-indigo-50 text-indigo-700 font-bold p-3 rounded-lg inline-block mb-6 text-lg" id="exito-poliza"></div>
+        <div class="border border-slate-200 rounded-xl text-sm overflow-hidden text-left">
+          <div class="flex justify-between p-3 border-b border-slate-200"><span class="text-slate-500">Plan</span> <strong id="exito-plan"></strong></div>
+          <div class="flex justify-between p-3 border-b border-slate-200"><span class="text-slate-500">Vigencia desde</span> <strong id="exito-vigencia"></strong></div>
+          <div class="flex justify-between p-3"><span class="text-slate-500">Cuota mensual</span> <strong id="exito-cuota"></strong></div>
+        </div>
+      </section>
+      
+      <!-- PASO 6: ERROR -->
+      <section data-paso="6" class="step-section hidden text-center py-10">
+        <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">×</div>
+        <h2 class="text-2xl font-bold mb-2">No pudimos procesar el pago</h2>
+        <p class="text-slate-500 mb-6 text-sm">La tarjeta fue rechazada. Revisá los datos o probá con otro medio de pago. Tus datos quedaron guardados.</p>
+        <div class="bg-amber-50 text-amber-800 p-3 rounded-lg text-xs inline-block">
+          Tarjeta de prueba que fuerza el error: 4000 0000 0000 0002
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTERS FIJOS -->
+    <div class="p-6 border-t border-slate-200 bg-white mt-auto">
+      <div id="footer-0" class="footer-content block">
+        <button type="button" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition" id="btn-empezar">Cotizar seguro de Celular</button>
+      </div>
+      <div id="footer-1" class="footer-content hidden">
+        <button type="submit" form="form-paso1" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl opacity-50 cursor-not-allowed transition" id="btn-ver-planes" disabled>Ver planes</button>
+      </div>
+      <div id="footer-2" class="footer-content hidden">
+        <div class="flex justify-between text-sm font-semibold mb-3">
+          <span id="resumen-izq">Plan - Modelo</span>
+          <span id="resumen-der">$0/mes</span>
+        </div>
+        <button type="button" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl opacity-50 cursor-not-allowed transition" id="btn-continuar-paso2" disabled>Continuar</button>
+      </div>
+      <div id="footer-3" class="footer-content hidden">
+        <button type="submit" form="form-paso3" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl opacity-50 cursor-not-allowed transition" id="btn-continuar-paso3" disabled>Continuar al pago</button>
+        <p class="text-center text-xs text-slate-500 mt-2">El botón se habilita cuando el formulario es válido</p>
+      </div>
+      <div id="footer-4" class="footer-content hidden">
+        <button type="submit" form="form-paso4" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl opacity-50 cursor-not-allowed transition" id="btn-pagar" disabled>Pagar y contratar</button>
+      </div>
+      <div id="footer-5" class="footer-content hidden space-y-2">
+        <button type="button" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl" id="btn-descargar-poliza">Descargar póliza</button>
+        <button type="button" class="w-full bg-white text-indigo-600 border border-indigo-600 font-semibold py-3 rounded-xl" id="btn-volver-inicio">Volver al inicio</button>
+      </div>
+      <div id="footer-6" class="footer-content hidden space-y-2">
+        <button type="button" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl" id="btn-reintentar">Reintentar pago</button>
+        <button type="button" class="w-full bg-white text-indigo-600 border border-indigo-600 font-semibold py-3 rounded-xl" id="btn-cambiar-medio">Cambiar medio de pago</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
