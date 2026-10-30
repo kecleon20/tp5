@@ -6,7 +6,7 @@ Este proyecto consiste en el desarrollo del **front-end de un checkout de contra
 
 ## 🚀 Demo
 Podés ver el sitio funcionando en vivo acá: 
-👉 **[https://kecleon20.github.io/tp5/](https://kecleon20.github.io/tp5/)**
+👉 https://kecleon20.github.io/tp5/
 
 ## 📸 Capturas de Pantalla
 
